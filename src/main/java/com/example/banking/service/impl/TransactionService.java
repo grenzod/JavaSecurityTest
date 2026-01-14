@@ -1,10 +1,11 @@
-package com.example.banking.service;
+package com.example.banking.service.impl;
 
 import com.example.banking.config.RSACrypto;
 import com.example.banking.dto.IncomingTransactionDTO;
 import com.example.banking.entity.TransactionHistory;
 import com.example.banking.exception.TransactionException;
 import com.example.banking.repository.TransactionHistoryRepository;
+import com.example.banking.service.ITransactionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,7 +15,7 @@ import java.time.LocalDateTime;
 
 @Service
 @RequiredArgsConstructor
-public class TransactionService {
+public class TransactionService implements ITransactionService {
 
     private final TransactionHistoryRepository repository;
     private final RSACrypto rsaCrypto;
